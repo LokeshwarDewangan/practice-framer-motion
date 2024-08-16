@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "./pages/Layout";
+import FollowCursor from "./components/animation/FollowCursor";
 
 function App() {
   const [themeMode, setThemeMode] = useState<string>("dark");
@@ -29,6 +30,7 @@ function App() {
       <h2 className="text-center mt-4 font-bold text-2xl gradient-text">
         Framer Motion Animation
       </h2>
+      <FollowCursor />
       <Layout toggleThemeMode={toggleThemeMode} themeMode={themeMode} />
     </>
   );
