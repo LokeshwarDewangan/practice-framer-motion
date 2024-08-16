@@ -57,3 +57,10 @@ body.light {
   background-color: white;
   color: black;
 }
+
+/* gradient text */
+.gradient-text {
+  background: linear-gradient(to bottom, #3d9cfc, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

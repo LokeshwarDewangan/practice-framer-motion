@@ -26,6 +26,9 @@ function App() {
 
   return (
     <>
+      <h2 className="text-center mt-4 font-bold text-2xl gradient-text">
+        Framer Motion Example
+      </h2>
       <Layout toggleThemeMode={toggleThemeMode} themeMode={themeMode} />
     </>
   );
