@@ -32,7 +32,7 @@ const ProfileModal: FC = () => {
     <>
       <div className="">
         <motion.div
-          className="select-none absolute top-1 z-50 right-1  m-3 p-2 w-fit h-fit cursor-pointer rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-100 ease-in"
+          className="select-none absolute shadow-md top-1 z-50 right-1  m-3 p-2 w-fit h-fit cursor-pointer rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-100 ease-in"
           onClick={() => setIsModalShow(!isModelShow)}>
           <FaRegUserCircle className="text-3xl" />
         </motion.div>
