@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Layout } from "./pages/Layout";
 import FollowCursor from "./components/animation/FollowCursor";
+import { Route, Routes } from "react-router-dom";
+import Homepage from "./pages/home/Homepage";
+import MasonryLayout from "./pages/Masonry/MasonryLayout";
 
 function App() {
   const [themeMode, setThemeMode] = useState<string>("dark");
@@ -27,11 +30,23 @@ function App() {
 
   return (
     <>
-      <h2 className="text-center mt-4 font-bold text-2xl gradient-text">
-        Framer Motion Animation
-      </h2>
-      <FollowCursor />
-      <Layout toggleThemeMode={toggleThemeMode} themeMode={themeMode} />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route
+          path="framer-motion"
+          element={
+            <Layout toggleThemeMode={toggleThemeMode} themeMode={themeMode} />
+          }
+        />
+        <Route
+          path="masonry"
+          element={
+            <MasonryLayout />
+          }
+        />
+
+        {/* <FollowCursor /> */}
+      </Routes>
     </>
   );
 }

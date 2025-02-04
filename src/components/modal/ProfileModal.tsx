@@ -1,6 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
+import { Tooltip } from "react-tooltip";
+
+interface ProfileModalType {
+  themeMode: string;
+}
 
 const SCALE_MODAL_VARIENT = {
   initial: { opacity: 1, scale: 0 },
@@ -25,13 +30,16 @@ const ITEM_STAGGER_VARIANT = {
   exit: { opacity: 0, scale: 0 },
 };
 
-const ProfileModal: FC = () => {
+const ProfileModal: FC<ProfileModalType> = ({ themeMode }) => {
   const [isModelShow, setIsModalShow] = useState(false);
 
   return (
     <>
       <div className="">
         <motion.div
+          data-tooltip-id="themeMode"
+          data-tooltip-content="Profile"
+          data-tooltip-place="right"
           className="select-none absolute shadow-md top-1 z-50 right-1  m-3 p-2 w-fit h-fit cursor-pointer rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-100 ease-in"
           onClick={() => setIsModalShow(!isModelShow)}>
           <FaRegUserCircle className="text-3xl" />
@@ -103,6 +111,10 @@ const ProfileModal: FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <Tooltip
+        id="themeMode"
+        variant={themeMode === "dark" ? "light" : "dark"}
+      />
     </>
   );
 };
